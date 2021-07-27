@@ -1,1 +1,1 @@
-# Lab2-Framework-React
+# Práctica de Laboratorio II: React.js
