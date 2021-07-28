@@ -8,10 +8,8 @@ import { Box,
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import DashboardSharpIcon from '@material-ui/icons/DashboardSharp';
+import ErrorOutlineOutlinedIcon from '@material-ui/icons/ErrorOutlineOutlined';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import ListAltSharpIcon from '@material-ui/icons/ListAltSharp';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 
 export default function Footer(props) {
 
@@ -53,19 +51,9 @@ export default function Footer(props) {
                                         <DashboardSharpIcon />
                                     </IconButton>
                                 </Tooltip>
-                                <Tooltip title="Tareas" aria-label="Tareas">
-                                    <IconButton color='#424242' component={ Link } to='/Tasks'>
-                                        <ListAltSharpIcon />
-                                    </IconButton>
-                                </Tooltip>
-                                <Tooltip title="Mensajes" aria-label="Mensajes">
-                                    <IconButton color='#424242' component={ Link } to='/Messages'>
-                                        <MailIcon />
-                                    </IconButton>
-                                </Tooltip>
-                                <Tooltip title="Notificaciones" aria-label="Notificaciones">
-                                    <IconButton color='#424242' component={ Link } to='/Notifications'>
-                                        <NotificationsIcon />
+                                <Tooltip title="Error 404" aria-label="Error404">
+                                    <IconButton color='#424242' component={ Link } to='/error404'>
+                                        <ErrorOutlineOutlinedIcon />
                                     </IconButton>
                                 </Tooltip>
                             </Typography>

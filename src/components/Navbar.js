@@ -17,24 +17,31 @@ import { AppBar,
         MenuItem,
         MenuList,
         Toolbar,
+        Tooltip,
         Typography } from '@material-ui/core';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import BuildOutlinedIcon from '@material-ui/icons/BuildOutlined';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import CodeOutlinedIcon from '@material-ui/icons/CodeOutlined';
 import DashboardSharpIcon from '@material-ui/icons/DashboardSharp';
+import ErrorOutlineOutlinedIcon from '@material-ui/icons/ErrorOutlineOutlined';
+import DetailsOutlinedIcon from '@material-ui/icons/DetailsOutlined';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import GroupSharpIcon from '@material-ui/icons/GroupSharp';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import HomeWorkSharpIcon from '@material-ui/icons/HomeWorkSharp';
 import ImportContactsSharpIcon from '@material-ui/icons/ImportContactsSharp';
-import ListAltSharpIcon from '@material-ui/icons/ListAltSharp';
+import ListAltOutlinedIcon from '@material-ui/icons/ListAltOutlined';
 import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import SchoolSharpIcon from '@material-ui/icons/SchoolSharp';
+import SettingsEthernetOutlinedIcon from '@material-ui/icons/SettingsEthernetOutlined';
+import WidgetsOutlinedIcon from '@material-ui/icons/WidgetsOutlined';
 
 import AlertDialog from './modal/AlertDialog';
 import Messages from './modal/popover/Messages';
@@ -173,6 +180,8 @@ export default function Navbar(props) {
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const [openList, setOpenList] = React.useState(false);
   const [openList2, setOpenList2] = React.useState(false);
+  const [openDetails, setOpenDetails] = React.useState(false);
+  const [openDetails2, setOpenDetails2] = React.useState(false);
   const [anchorElMsg, setAnchorElMsg] = React.useState(null);
   const [anchorElNot, setAnchorElNot] = React.useState(null);
   
@@ -183,6 +192,14 @@ export default function Navbar(props) {
   const handleCloseMsg = () => {
     setAnchorElMsg(null);
   };
+
+  const handleClickDetails = () => {
+    setOpenDetails(!openDetails);
+  }
+
+  const handleClickDetails2 = () => {
+    setOpenDetails2(!openDetails2);
+  }
 
   const openMsg = Boolean(anchorElMsg);
   const idMsg = open ? 'messages' : undefined;
@@ -422,97 +439,163 @@ export default function Navbar(props) {
         </div>
         <Divider />
         <MenuList>
-          <MenuItem component={ Link } to="/">
-            <ListItemIcon>
-              <HomeOutlinedIcon />
-            </ListItemIcon>
-            <Typography>
-              Inicio
-            </Typography>
-          </MenuItem>
-          <MenuItem component={ Link } to={{ pathname: "/Dashboard" }}>
-            <ListItemIcon>
-              <DashboardSharpIcon />
-            </ListItemIcon>
-            <Typography>
-              Dashboard
-            </Typography>
-          </MenuItem>
-          <MenuItem component={ Link } to='/Tasks'>
-            <ListItemIcon>
-              <ListAltSharpIcon />
-            </ListItemIcon>
-            <Typography>
-              Tareas
-            </Typography>
-          </MenuItem>
-          <MenuItem component={ Link } to='/Messages'>
-            <ListItemIcon>
-              <MailIcon />
-            </ListItemIcon>
-            <Typography>
-              Mensajes
-            </Typography>
-          </MenuItem>
-          <MenuItem component={ Link } to='/Notifications'>
-            <ListItemIcon>
-              <NotificationsIcon />
-            </ListItemIcon>
-            <Typography>
-              Notificaciones
-            </Typography>
-          </MenuItem>
+          <Tooltip title='Inicio' placement='right'>
+            <MenuItem component={ Link } to='/' >
+              <ListItemIcon>
+                <HomeOutlinedIcon />
+              </ListItemIcon>
+              <Typography>
+                Inicio
+              </Typography>
+            </MenuItem>
+          </Tooltip>
+          <Tooltip title='Dashboard' placement='right'>
+            <MenuItem component={ Link } to='/Dashboard' >
+              <ListItemIcon>
+                <DashboardSharpIcon />
+              </ListItemIcon>
+              <Typography>
+                Dashboard
+              </Typography>
+            </MenuItem>
+          </Tooltip>
+          <Tooltip title='Detalles' placement='right'>
+            <ListItem button onClick={ handleClickDetails }>
+              <ListItemIcon>
+                <DetailsOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary='Detalles' />
+              {openDetails ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+          </Tooltip>
+          <Collapse in={ openDetails } timeout="auto" unmountOnExit>
+            <Tooltip title='Instalación' placement='right'>
+            <MenuItem component={ Link } to='/Installation' >
+                <ListItemIcon>
+                  <CodeOutlinedIcon />
+                </ListItemIcon>
+                <Typography>
+                  Instalación
+                </Typography>
+              </MenuItem>
+            </Tooltip>
+            <Tooltip title='Desarrollo' placement='right'>
+              <MenuItem component={ Link } to='/Development' >
+                <ListItemIcon>
+                  <BuildOutlinedIcon />
+                </ListItemIcon>
+                <Typography>
+                  Desarrollo
+                </Typography>
+              </MenuItem>
+            </Tooltip>
+            <Tooltip title='Características' placement='right'>
+              <ListItem button onClick={ handleClickDetails2 }>
+                <ListItemIcon>
+                  <ListAltOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText primary='Características' />
+                {openDetails2 ? <ExpandLess /> : <ExpandMore />}
+              </ListItem>
+            </Tooltip>
+            <Collapse in={ openDetails2 } timeout="auto" unmountOnExit>
+              <Tooltip title='Librerías' placement='right'>
+                <MenuItem component={ Link } to='/Libraries' >
+                  <ListItemIcon>
+                    <SettingsEthernetOutlinedIcon />
+                  </ListItemIcon>
+                  <Typography>
+                    Librerías
+                  </Typography>
+                </MenuItem>
+              </Tooltip>
+              <Tooltip title='Componentes' placement='right'>
+                <MenuItem component={ Link } to='/Components' >
+                  <ListItemIcon>
+                    <WidgetsOutlinedIcon />
+                  </ListItemIcon>
+                  <Typography>
+                    Componentes
+                  </Typography>
+                </MenuItem>
+              </Tooltip>
+            </Collapse>
+          </Collapse>
+          <Tooltip title='Error 404' placement='right'>
+            <MenuItem component={ Link } to='/error404'>
+              <ListItemIcon>
+                <ErrorOutlineOutlinedIcon />
+              </ListItemIcon>
+              <Typography>
+                Error 404
+              </Typography>
+            </MenuItem>
+          </Tooltip>
         </MenuList>
         <Divider />
         <List>
-          <ListItem button onClick={handleClick}>
-            <ListItemIcon>
-              <SchoolSharpIcon />
-            </ListItemIcon>
-            <ListItemText primary="UCLA" />
-            {openList ? <ExpandLess /> : <ExpandMore />}
-          </ListItem>
+          <Tooltip title='UCLA' placement='right'>
+            <ListItem button onClick={handleClick}>
+              <ListItemIcon>
+                <SchoolSharpIcon />
+              </ListItemIcon>
+              <ListItemText primary="UCLA" />
+              {openList ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+          </Tooltip>
           <Collapse in={openList} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItem button className={classes.nested}>
-                <ListItemIcon>
-                  <HomeWorkSharpIcon />
-                </ListItemIcon>
-                <ListItemText primary="DCYT" />
-              </ListItem>
-              <ListItem button className={classes.nested}>
-                <ListItemIcon>
-                  <ImportContactsSharpIcon />
-                </ListItemIcon>
-                <ListItemText primary="Laboratorio II" />
-              </ListItem>
-              <ListItem button onClick={handleClick2} className={classes.nested}>
-                <ListItemIcon>
-                  <GroupSharpIcon />
-                </ListItemIcon>
-                <ListItemText primary="Equipo de Trabajo" />
-                {openList2 ? <ExpandLess /> : <ExpandMore />}
-              </ListItem>
+              <Tooltip title='DCYT' placement='right'>
+                <ListItem button className={classes.nested}>
+                  <ListItemIcon>
+                    <HomeWorkSharpIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="DCYT" />
+                </ListItem>
+              </Tooltip>
+              <Tooltip title='Laboratorio II' placement='right'>
+                <ListItem button className={classes.nested}>
+                  <ListItemIcon>
+                    <ImportContactsSharpIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Laboratorio II" />
+                </ListItem>
+              </Tooltip>
+              <Tooltip title='Desarrolladores' placement='right'>
+                <ListItem button onClick={handleClick2} className={classes.nested}>
+                  <ListItemIcon>
+                    <GroupSharpIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Desarrolladores" />
+                  {openList2 ? <ExpandLess /> : <ExpandMore />}
+                </ListItem>
+              </Tooltip>
               <Collapse in={openList2} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                  <ListItem button className={classes.nested}>
-                    <ListItemIcon>
-                      <PersonOutlineOutlinedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Gustavo Rivero" />
-                  </ListItem>
-                  <ListItem button className={classes.nested}>
-                    <ListItemIcon>
-                      <PersonOutlineOutlinedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Luis Valladares" />
-                  </ListItem>
-                  <ListItem button className={classes.nested}>
-                    <ListItemIcon>
-                      <PersonOutlineOutlinedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="María Paredes" />
-                  </ListItem>
+                  <Tooltip title='Gustavo Rivero' placement='right'>
+                    <ListItem button className={classes.nested}>
+                      <ListItemIcon>
+                        <PersonOutlineOutlinedIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="Gustavo Rivero" />
+                    </ListItem>
+                  </Tooltip>
+                  <Tooltip title='Luis Valladares' placement='right'>
+                    <ListItem button className={classes.nested}>
+                      <ListItemIcon>
+                        <PersonOutlineOutlinedIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="Luis Valladares" />
+                    </ListItem>
+                  </Tooltip>
+                  <Tooltip title='María Paredes' placement='right'>
+                    <ListItem button className={classes.nested}>
+                      <ListItemIcon>
+                        <PersonOutlineOutlinedIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="María Paredes" />
+                    </ListItem>
+                  </Tooltip>
                 </List>
               </Collapse>
             </List>
