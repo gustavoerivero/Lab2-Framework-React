@@ -28,7 +28,7 @@ function Components(props) {
             <Grid container spacing={ 2 }>
 
                 <Grid item xs={ 12 }>
-                    <Navbar location='Instalación' />
+                    <Navbar location='Componentes' />
                 </Grid>
 
                 
