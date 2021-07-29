@@ -207,13 +207,13 @@ function Installation(props) {
                                                 </li>
                                             </ul>
                                         </li>
+                                        <li>
                                             Para componentes de El Laboratorio:
                                             <ul>
                                                 <li>
                                                     npm i @material-ui/lab
                                                 </li>
                                             </ul>
-                                        <li>
                                         </li>
                                         <li>
                                             Para la fuente (Roboto):

@@ -105,7 +105,7 @@ function Development(props) {
                             404 se le adjuntaron componentes de React VFX, para un aspecto más acorde con la temática 
                             escogida para la práctica. 
                             <br /><br />
-                            De igual forma, para el carga de página ubicado en el tope superior, se realizó un componente
+                            De igual forma, para la carga de página ubicado en el tope superior, se realizó un componente
                             exclusivo para el archivo Route.js, el cual es el archivo CustomSwitch.js. Este componente
                             hace uso de la TopBarProgress de la librería "react-topbar-progress-indicator". Una vez desarrollado,
                             se adjunta al archivo Route.js como un componente que contendrá todas las rutas accesibles por la página.
@@ -123,12 +123,6 @@ function Development(props) {
                             <br /><br />
                         </Typography>
                         <TreeRecursiveView data={ data } />
-                    </Grid>
-
-                    <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 } xl={ 6 } justify='center'> 
-                        <Typography>
-                            
-                        </Typography>
                     </Grid>
 
                 </Grid>
