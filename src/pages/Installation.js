@@ -104,7 +104,7 @@ function Installation(props) {
                     <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 } xl={ 6 } align='center'>
                         <DialogImage 
                             button={ <img src={ NodePage } alt='Página de Node.js' width='400px' /> } 
-                            modalTitle='Logo de React.js'
+                            modalTitle='Página oficial de Node.js'
                             content={ <img src={ NodePage } alt='Página de Node.js' width='565px' /> }
                         />
                     </Grid>

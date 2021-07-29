@@ -15,7 +15,7 @@ export default function Footer(props) {
 
     const useStyles = makeStyles({
         footer: {
-            paddingTop: '50px',
+            paddingTop: '20px',
             paddingLeft: '50px',
             width: '100%',
             position: 'absolute',
