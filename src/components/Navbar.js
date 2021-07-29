@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
-import { alpha, makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { AppBar,
-        Badge,
         Collapse,
         CssBaseline,
         Divider,
@@ -13,13 +12,11 @@ import { AppBar,
         ListItem,
         ListItemIcon,
         ListItemText,
-        Menu,
         MenuItem,
         MenuList,
         Toolbar,
         Tooltip,
         Typography } from '@material-ui/core';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import BuildOutlinedIcon from '@material-ui/icons/BuildOutlined';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -34,17 +31,11 @@ import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import HomeWorkSharpIcon from '@material-ui/icons/HomeWorkSharp';
 import ImportContactsSharpIcon from '@material-ui/icons/ImportContactsSharp';
 import ListAltOutlinedIcon from '@material-ui/icons/ListAltOutlined';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import SchoolSharpIcon from '@material-ui/icons/SchoolSharp';
 import SettingsEthernetOutlinedIcon from '@material-ui/icons/SettingsEthernetOutlined';
 import WidgetsOutlinedIcon from '@material-ui/icons/WidgetsOutlined';
-
-import AlertDialog from './modal/AlertDialog';
-import Messages from './modal/popover/Messages';
 
 const drawerWidth = 240;
 
@@ -117,55 +108,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'block',
       },
     },
-    search: {
-      position: 'relative',
-      borderRadius: theme.shape.borderRadius,
-      backgroundColor: alpha(theme.palette.common.white, 0.15),
-      '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
-      },
-      marginRight: theme.spacing(2),
-      marginLeft: 0,
-      width: '100%',
-      [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(3),
-        width: 'auto',
-      },
-    },
-    searchIcon: {
-      padding: theme.spacing(0, 2),
-      height: '100%',
-      position: 'absolute',
-      pointerEvents: 'none',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    inputRoot: {
-      color: 'inherit',
-    },
-    inputInput: {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('md')]: {
-        width: '20ch',
-      },
-    },
-    sectionDesktop: {
-      display: 'none',
-      [theme.breakpoints.up('md')]: {
-        display: 'flex',
-      },
-    },
-    sectionMobile: {
-      display: 'flex',
-      [theme.breakpoints.up('md')]: {
-        display: 'none',
-      },
-    },
 }));
 
 export default function Navbar(props) {
@@ -173,26 +115,11 @@ export default function Navbar(props) {
   const theme = useTheme();
 
   const [open, setOpen] = React.useState(false);
-  const [openSession, setOpenSession] = React.useState(false);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const [openList, setOpenList] = React.useState(false);
   const [openList2, setOpenList2] = React.useState(false);
   const [openDetails, setOpenDetails] = React.useState(false);
   const [openDetails2, setOpenDetails2] = React.useState(false);
-  const [anchorElMsg, setAnchorElMsg] = React.useState(null);
-  const [anchorElNot, setAnchorElNot] = React.useState(null);
   
-  const handleClickMsg = (event) => {
-    setAnchorElMsg(event.currentTarget);
-  };
-
-  const handleCloseMsg = () => {
-    setAnchorElMsg(null);
-  };
-
   const handleClickDetails = () => {
     setOpenDetails(!openDetails);
   }
@@ -201,44 +128,12 @@ export default function Navbar(props) {
     setOpenDetails2(!openDetails2);
   }
 
-  const openMsg = Boolean(anchorElMsg);
-  const idMsg = open ? 'messages' : undefined;
-
-  
-  const handleClickNot = (event) => {
-    setAnchorElNot(event.currentTarget);
-  };
-
-  const handleCloseNot = () => {
-    setAnchorElNot(null);
-  };
-
-  const openNot = Boolean(anchorElNot);
-  const idNot = open ? 'notifications' : undefined;
-  
   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
-  };
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
   };
 
   const handleClick = () => {
@@ -248,100 +143,6 @@ export default function Navbar(props) {
   const handleClick2 = () => {
     setOpenList2(!openList2);
   };
-
-  const handleClickOpenSession = () => {
-    setOpenSession(true);
-  };
-
-  const handleCloseSession = () => {
-    setOpenSession(false);
-  };
-
-  const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={ handleMenuClose }>
-        Mi Perfil
-      </MenuItem>
-      <MenuItem onClick={ handleClickOpenSession }>Cerrar Sesión</MenuItem>
-      <AlertDialog 
-        open={ openSession } 
-        handleClose={ handleCloseSession } 
-        title='¿Desea cerrar sesión?'
-        description='Debe confirmar si desea cerrar su sesión. 
-                      Una vez cerrada su sesión, deberá ingresar 
-                      nuevamente sus credenciales de acceso.'
-        decline='No'
-        accept='Sí'
-        handleMenuClose={ handleMenuClose }
-      />
-    </Menu>
-  );
-
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem onClick={ handleClickMsg }>
-        <IconButton aria-label="Mostrar mensajes" color="inherit">
-          <Badge variant='dot' color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Mensajes</p>
-      </MenuItem>
-      <Messages 
-        id={ idMsg } 
-        open={ openMsg } 
-        anchorEl={ anchorElMsg } 
-        handleClose={ handleCloseMsg } 
-        title='Mensajes'
-        description='No hay mensajes por ver.'
-      />
-      <MenuItem onClick={ handleClickNot }>
-        <IconButton aria-label="Mostrar notificaciones" color="inherit">
-          <Badge variant='dot' color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notificaciones</p>
-      </MenuItem>
-      <Messages 
-        id={ idNot } 
-        open={ openNot } 
-        anchorEl={ anchorElNot } 
-        handleClose={ handleCloseNot } 
-        title='Notificaciones'
-        description='No hay notificaciones por ver.'
-      />
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Perfil</p>
-      </MenuItem>
-    </Menu>
-  );
 
   return (
     <div className={classes.root}>
@@ -368,55 +169,6 @@ export default function Navbar(props) {
             { props.location }
           </Typography>
           <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show new mails" color="inherit" onClick={ handleClickMsg }>
-              <Badge variant='dot' color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <Messages 
-              id={ idMsg } 
-              open={ openMsg } 
-              anchorEl={ anchorElMsg } 
-              handleClose={ handleCloseMsg } 
-              title='Mensajes'
-              description='No hay mensajes por ver.'
-            />
-            <IconButton aria-label="show new notifications" color="inherit" onClick={ handleClickNot }>
-              <Badge variant='dot' color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <Messages 
-              id={ idNot } 
-              open={ openNot } 
-              anchorEl={ anchorElNot } 
-              handleClose={ handleCloseNot } 
-              title='Notificaciones'
-              description='No hay notificaciones por ver.'
-            />
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -602,8 +354,6 @@ export default function Navbar(props) {
           </Collapse>
         </List>
       </Drawer>
-      { renderMobileMenu }
-      { renderMenu }
     </div>
   );
 }
