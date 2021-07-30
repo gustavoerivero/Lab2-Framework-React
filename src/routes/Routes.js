@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, HashRouter, Route, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Redirect } from 'react-router-dom';
 import CustomSwitch from './CustomSwitch';
 import Home from '../pages/Home';
 import Dashboard from '../pages/Dashboard';
@@ -22,7 +22,7 @@ function App() {
           <Route exact path='/Development' component={ Development } />
           <Route exact path='/Libraries' component={ Libraries } />
           <Route exact path='/Components' component={ Components } />
-          <Route path='/error404' component={ PageNotFound } />
+          <Route exact path='/error404' component={ PageNotFound } />
           <Redirect from='*' to='/error404' />
         </CustomSwitch>
       </HashRouter>

@@ -8,6 +8,13 @@ import Footer from '../components/Footer';
 import '@fontsource/roboto';
 import '../assets/css/Pages.css';
 
+import DashboardImage from '../assets/img/dashboard.png';
+import InstallationImage from '../assets/img/installation.png';
+import DevelopmentImage from '../assets/img/programming.png';
+import LibrariesImage from '../assets/img/libraries.jpeg';
+import ComponentsImage from '../assets/img/components.jpg';
+import Error404Page from '../assets/img/error404.png';
+
 const useStyles = makeStyles(() => ({
     root: {
         flexGrow: 1,
@@ -29,37 +36,37 @@ function Home(props) {
     
     const images = [
         {
-            url: '/static/images/dashboard.png',
+            url: DashboardImage,
             title: 'Dashboard',
             width: '16.5%',
             to: '/Dashboard'
         },
         {
-            url: '/static/images/installation.png',
+            url: InstallationImage,
             title: 'Instalación',
             width: '16.5%',
             to: '/Installation'
         },
         {
-            url: '/static/images/programming.png',
+            url: DevelopmentImage,
             title: 'Desarrollo',
             width: '16.5%',
             to: '/Development'
         },
         {
-            url: '/static/images/libraries.jpeg',
+            url: LibrariesImage,
             title: 'Librerías',
             width: '16.5%',
             to: '/Libraries'
         },
         {
-            url: '/static/images/components.jpg',
+            url: ComponentsImage,
             title: 'Componentes',
             width: '16.5%',
             to: '/Components'
         },
         {
-            url: '/static/images/error404.png',
+            url: Error404Page,
             title: 'Error 404',
             width: '16.5%',
             to: '/error404'
