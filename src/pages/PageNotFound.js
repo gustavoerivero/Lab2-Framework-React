@@ -1,8 +1,10 @@
 import React from 'react';
-import { Button, Grid, Typography } from '@material-ui/core';
+import { IconButton, Grid, Tooltip, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { VFXProvider, VFXImg, VFXSpan } from 'react-vfx';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import dontWork from '../assets/img/dontWork.png';
+import '../assets/css/Error404.css';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -32,11 +34,14 @@ export default function PageNotFound(props) {
                         No pudimos encontrar la página que estás buscando.
                     </Typography>
                     <Typography variant='h7'>
-                        Deberías intentar volver al {
-                            <Button size='small' variant='contained' color='primary' href='/'>
-                                Inicio
-                            </Button>
-                        } a ver si encuentras aquello que deseas.
+                        Deberías intentar volver al inicio a ver si encuentras aquello que deseas.
+                    </Typography>
+                    <Typography align='center'>
+                        <Tooltip title='Inicio' aria-label='Inicio'>
+                            <IconButton component={ RouterDom.Link } to='/' color='primary'>
+                                <HomeOutlinedIcon />
+                            </IconButton>
+                        </Tooltip>
                     </Typography>
                     <Typography variant='h6'>
                         <VFXSpan shader='glitch'>_____Error:_404._Page_Not_Found_____</VFXSpan>
