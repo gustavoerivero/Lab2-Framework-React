@@ -16,7 +16,7 @@ function App() {
     <ThemeProvider theme={ Theme }>
       <BrowserRouter>
         <CustomSwitch>
-          <Route exact path='/Home' component={ Home } />
+          <Route exact path='/' component={ Home } />
           <Route exact path='/Dashboard' component={ Dashboard } />
           <Route exact path='/Installation' component={ Installation } />
           <Route exact path='/Development' component={ Development } />

@@ -33,7 +33,7 @@ export default function PageNotFound(props) {
                     </Typography>
                     <Typography variant='h7'>
                         Deberías intentar volver al {
-                            <Button size='small' variant='contained' color='primary' href='/Home'>
+                            <Button size='small' variant='contained' color='primary' href='/'>
                                 Inicio
                             </Button>
                         } a ver si encuentras aquello que deseas.
