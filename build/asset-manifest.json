@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Lab2-Framework-React/static/css/main.f8c1c12a.chunk.css",
-    "main.js": "/Lab2-Framework-React/static/js/main.061ef638.chunk.js",
-    "main.js.map": "/Lab2-Framework-React/static/js/main.061ef638.chunk.js.map",
+    "main.css": "/Lab2-Framework-React/static/css/main.b52ada13.chunk.css",
+    "main.js": "/Lab2-Framework-React/static/js/main.c915d9f5.chunk.js",
+    "main.js.map": "/Lab2-Framework-React/static/js/main.c915d9f5.chunk.js.map",
     "runtime-main.js": "/Lab2-Framework-React/static/js/runtime-main.4e21c97f.js",
     "runtime-main.js.map": "/Lab2-Framework-React/static/js/runtime-main.4e21c97f.js.map",
     "static/css/2.22b26bcc.chunk.css": "/Lab2-Framework-React/static/css/2.22b26bcc.chunk.css",
-    "static/js/2.742aadad.chunk.js": "/Lab2-Framework-React/static/js/2.742aadad.chunk.js",
-    "static/js/2.742aadad.chunk.js.map": "/Lab2-Framework-React/static/js/2.742aadad.chunk.js.map",
+    "static/js/2.c95a615f.chunk.js": "/Lab2-Framework-React/static/js/2.c95a615f.chunk.js",
+    "static/js/2.c95a615f.chunk.js.map": "/Lab2-Framework-React/static/js/2.c95a615f.chunk.js.map",
     "index.html": "/Lab2-Framework-React/index.html",
     "static/css/2.22b26bcc.chunk.css.map": "/Lab2-Framework-React/static/css/2.22b26bcc.chunk.css.map",
-    "static/css/main.f8c1c12a.chunk.css.map": "/Lab2-Framework-React/static/css/main.f8c1c12a.chunk.css.map",
-    "static/js/2.742aadad.chunk.js.LICENSE.txt": "/Lab2-Framework-React/static/js/2.742aadad.chunk.js.LICENSE.txt",
+    "static/css/main.b52ada13.chunk.css.map": "/Lab2-Framework-React/static/css/main.b52ada13.chunk.css.map",
+    "static/js/2.c95a615f.chunk.js.LICENSE.txt": "/Lab2-Framework-React/static/js/2.c95a615f.chunk.js.LICENSE.txt",
     "static/media/Gustavo.f3731614.jpg": "/Lab2-Framework-React/static/media/Gustavo.f3731614.jpg",
     "static/media/Maria.241ead43.jpg": "/Lab2-Framework-React/static/media/Maria.241ead43.jpg",
     "static/media/Valladares.6f6b6803.jpg": "/Lab2-Framework-React/static/media/Valladares.6f6b6803.jpg",
@@ -44,8 +44,8 @@
   "entrypoints": [
     "static/js/runtime-main.4e21c97f.js",
     "static/css/2.22b26bcc.chunk.css",
-    "static/js/2.742aadad.chunk.js",
-    "static/css/main.f8c1c12a.chunk.css",
-    "static/js/main.061ef638.chunk.js"
+    "static/js/2.c95a615f.chunk.js",
+    "static/css/main.b52ada13.chunk.css",
+    "static/js/main.c915d9f5.chunk.js"
   ]
 }
