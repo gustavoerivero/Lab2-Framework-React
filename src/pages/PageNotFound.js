@@ -47,7 +47,7 @@ export default function PageNotFound(props) {
                         </Tooltip>
                     </Typography>
                     <Typography variant='h6'>
-                        <VFXSpan shader='rgbShift'>_____Error:_404._Page_Not_Found_____</VFXSpan>
+                        <VFXSpan overflow shader='Glitch'>_____Error:_404._Page_Not_Found_____</VFXSpan>
                     </Typography>
                 </Grid>
             </Grid>
