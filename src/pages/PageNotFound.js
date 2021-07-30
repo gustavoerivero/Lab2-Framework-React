@@ -6,51 +6,64 @@ import { VFXProvider, VFXImg, VFXSpan } from 'react-vfx';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import dontWork from '../assets/img/dontWork.png';
 import '../assets/css/Error404.css';
-import '../assets/css/Pages.css';
 import '@fontsource/roboto';
 
 const useStyles = makeStyles(() => ({
     root: {
         alignItems: 'center',
         alignContent: 'center',
-        padding: '50px 50px 0px 50px',
+        padding: '50px 50px 0px 0px',
+        backgroundColor: '#303030',
+        margin: '0px'
+    },
+    body: {
+        backgroundColor: '#303030',
+        padding: '0px',
+        margin: '0',
+        color: '#303030',
+        minHeight: '100vh',
+        minWidth: '100vw',
     },
 }));
 
 export default function PageNotFound(props) {
     const classes = useStyles();
     return (
+        <div className={ classes.body }>
         <VFXProvider>
             <Grid 
                 container spacing={ 2 } 
                 justify='center'
                 className={ classes.root }
             >
-                <Grid item xs={ 12 } sm={ 12 } md={ 9 } lg={ 6 } xl={ 6 }>
-                    <VFXImg src={ dontWork } shader='rgbShift' overflow />
+                <Grid item xs={ 12 } sm={ 12 } md={ 9 } lg={ 6 } xl={ 6 } justify='center'>
+                    <Typography align='center'>
+                        <VFXImg src={ dontWork } shader='rgbShift' overflow width='80%'/>
+                    </Typography>
                 </Grid>
                 <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 } xl={ 6 }>
-                    <Typography variant='h2'>
+                    <Typography variant='h2' color='primary' align='center'>
                         ¡Lo sentimos!
                     </Typography>
-                    <Typography variant='h5'>
+                    <Typography variant='h5' color='primary' align='center'>
                         No pudimos encontrar la página que estás buscando.
                     </Typography>
-                    <Typography variant='h7'>
+                    <Typography variant='body1' color='primary' align='center'>
                         Deberías intentar volver al inicio a ver si encuentras aquello que deseas.
                     </Typography>
                     <Typography align='center'>
-                        <Tooltip title='Inicio' aria-label='Inicio'>
-                            <IconButton component={ Link } to='/' color='primary' variant='contained'>
+                        <Tooltip title='Inicio' aria-label='Inicio' placement='right'>
+                            <IconButton component={ Link } to='/' color='primary'>
                                 <HomeOutlinedIcon />
                             </IconButton>
                         </Tooltip>
                     </Typography>
-                    <Typography variant='h6'>
-                        <VFXSpan overflow shader='Glitch'>_____Error:_404._Page_Not_Found_____</VFXSpan>
+                    <Typography variant='h6' align='center' color='primary'>
+                        <VFXSpan shader='glitch'>_____Error:_404._Page_Not_Found_____</VFXSpan>
                     </Typography>
                 </Grid>
             </Grid>
         </VFXProvider>
+        </div>
     )
 }
