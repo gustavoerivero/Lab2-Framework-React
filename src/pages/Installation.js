@@ -1,6 +1,7 @@
 import React from 'react';
 import * as RouterDom from 'react-router-dom';
-import { IconButton, 
+import { Divider, 
+        IconButton, 
         Grid, 
         Link, 
         Tooltip, 
@@ -54,6 +55,10 @@ function Installation(props) {
                         </Typography>
                     </Grid>
 
+                    <Grid item xs={ 12 }>
+                        <Divider />
+                    </Grid>
+
                     <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 } xl={ 6 }> 
                         <Typography variant='body1' component='p'>
                             Para el uso del framework React.js no se requiere de una
@@ -77,6 +82,10 @@ function Installation(props) {
                             modalTitle='Logo de React.js'
                             content={ <img src={ ReactLogo } width='450px' alt='React.js' /> }
                         />
+                    </Grid>
+
+                    <Grid item xs={ 12 }>
+                        <Divider />
                     </Grid>
 
                     <Grid item xs={ 12 }>
@@ -250,7 +259,6 @@ function Installation(props) {
                             modalTitle='Instalación de librerías'
                             content={ <img src={ NpmInstall } alt='Instalación de dependencias' width='565px' /> }
                         />
-                        
                     </Grid>
 
                 </Grid>
