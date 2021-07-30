@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Redirect } from 'react-router-dom';
 import CustomSwitch from './CustomSwitch';
 import Home from '../pages/Home';
 import Dashboard from '../pages/Dashboard';
@@ -14,7 +14,7 @@ import { ThemeProvider } from '@material-ui/core';
 function App() {
   return (
     <ThemeProvider theme={ Theme }>
-      <BrowserRouter>
+      <HashRouter>
         <CustomSwitch>
           <Route exact path='/' component={ Home } />
           <Route exact path='/Dashboard' component={ Dashboard } />
@@ -25,7 +25,7 @@ function App() {
           <Route path='/error404' component={ PageNotFound } />
           <Redirect from='*' to='/error404' />
         </CustomSwitch>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
