@@ -41,7 +41,7 @@ export default function PageNotFound(props) {
                     </Typography>
                     <Typography align='center'>
                         <Tooltip title='Inicio' aria-label='Inicio'>
-                            <IconButton component={ Link } to='/' color='primary'>
+                            <IconButton component={ Link } to='/' color='primary' variant='contained'>
                                 <HomeOutlinedIcon />
                             </IconButton>
                         </Tooltip>
