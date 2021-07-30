@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
-import CustomSwitch from './CustomSwitch';
+import CustomSwitch from './CustomSwitch';git
 import Home from '../pages/Home';
 import Dashboard from '../pages/Dashboard';
 import Installation from '../pages/Installation';
