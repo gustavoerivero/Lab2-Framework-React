@@ -338,7 +338,7 @@ function Libraries(props) {
                 <Grid item xs={ 12 } >
                     <Footer />
                 </Grid>
-                
+            
             </Grid>
         </div>
     );
