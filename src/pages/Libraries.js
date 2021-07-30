@@ -18,10 +18,12 @@ import NavigateNextOutlinedIcon from '@material-ui/icons/NavigateNextOutlined';
 
 import ReactRouterPage from '../assets/img/react-router-dom.png';
 import MaterialUIPage from '../assets/img/material-ui.png';
+import ReactChartjs2Page from '../assets/img/react-chartjs-2.png';
 import ReactVFXPage from '../assets/img/react-vfx.png';
 import Error404Page from '../assets/img/error404.png';
 import RepoTopBar from '../assets/img/repoTopbar.png';
 import TopBarProgress from '../assets/img/TopBarProgress.png';
+import GHPages from '../assets/img/gh-pages.png';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -158,6 +160,40 @@ function Libraries(props) {
 
                     <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 } xl={ 6 }>
                         <Typography variant='h4' component='h4'>
+                            <b>react-chartjs-2</b>
+                        </Typography>
+                        <Typography variant='body1' component='p'>
+                            Una librería que provee componentes para generar gráficos de manera
+                            sencilla.
+                            <br /><br />
+                            Para la implementación de los componentes de esta librería basta con generar
+                            un archivo js con las configuraciones necesarias por el desarrollador y 
+                            proveerle los datos para así construir el gráfico deseado.
+                            <br /><br />
+                            El material de apoyo utilizado es el provisto por su repositorio en GitHub.
+                            <br /><br />
+                            <Typography align='center'>
+                                <Button variant='contained' color='primary' href='https://reactchartjs.github.io/react-chartjs-2/#/'>
+                                    react-chartjs-2
+                                </Button>
+                            </Typography>
+                        </Typography>
+                    </Grid>
+
+                    <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 } xl={ 6 } align='center'>
+                        <DialogImage 
+                            button={ <img src={ ReactChartjs2Page } alt='Página de react-chartjs-2' width='400px' /> } 
+                            modalTitle='Página oficial de react-chartjs-2'
+                            content={ <img src={ ReactChartjs2Page } alt='Página de react-chartjs-2' width='565px' /> }
+                        />
+                    </Grid>
+
+                    <Grid item xs={ 12 }>
+                        <Divider />
+                    </Grid>
+
+                    <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 } xl={ 6 }>
+                        <Typography variant='h4' component='h4'>
                             <b>React VFX</b>
                         </Typography>
                         <Typography variant='body1' component='p'>
@@ -232,6 +268,53 @@ function Libraries(props) {
                             button={ <img src={ TopBarProgress } alt='Barra de Progresso de la Práctica' width='400px' /> } 
                             modalTitle='Barra de Progresso de la Práctica'
                             content={ <img src={ TopBarProgress } alt='Barra de Progresso de la Práctica' width='565px' /> }
+                        />
+                    </Grid>
+
+                    <Grid item xs={ 12 }>
+                        <Divider />
+                    </Grid>
+
+                    <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 } xl={ 6 }>
+                        <Typography variant='h4' component='h4'>
+                            <b>GitHub Pages</b>
+                        </Typography>
+                        <Typography variant='body1' component='p'>
+                            Esta librería se utilizó con el propósito de realizar deploy
+                            con GitHub Pages.
+                            <br /><br />
+                            Para su instalación, se debe ejecutar el comando 'npm i gh-pages'.
+                            Posterior a ello, se debe ajustar el archivo package.json, en donde,
+                            justo debajo de la línea de "name", se coloca "homepage" seguido del
+                            url que se supone que tendrá la página. Este url está conformado por 
+                            "https://" seguido del usuario que creó el repositorio seguido de ".github.io/"
+                            y por último el nombre del repositorio.
+                            <br /><br />
+                            Para este caso, el url es "https://gustavoerivero.github.io/Lab2-Framework-React".
+                            <br /><br />
+                            De igual manera, en el apartado de scripts del mismo archivo package.json, se colocan:
+                            <br/><br />
+                            "predeploy": "npm run build",<br/>
+                            "deploy": "gh-pages -d build"
+                            <br /><br />
+                            Para finalizar, se actualizan los cambios del repositorio haciendo "git push" y se ejecutan
+                            los comandos "npm run build" seguido de "gh-pages -d build"
+                            <br /><br />
+                            El material de apoyo aquel que se encuentra en su repositorio:
+                            <br /><br />
+                            <Typography align='center'>
+                                <Button variant='contained' color='primary' href='https://www.npmjs.com/package/gh-pages'>
+                                    GitHub Pages
+                                </Button>
+                            </Typography>
+                        </Typography>
+                    </Grid>
+
+                    <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 } xl={ 6 } align='center'>
+                        <DialogImage 
+                            button={ <img src={ GHPages } alt='Página de npm con la información de gh-pages' width='400px' /> } 
+                            modalTitle='Página de npm con la información de gh-pages'
+                            content={ <img src={ GHPages } alt='Página de npm con la información de gh-pages' width='565px' /> }
                         />
                     </Grid>
 

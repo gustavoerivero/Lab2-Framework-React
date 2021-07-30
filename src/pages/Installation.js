@@ -235,6 +235,14 @@ function Installation(props) {
                                     </ul>
                                 </li>
                                 <li>
+                                    <b>Para los gráficos:</b>
+                                    <ul>
+                                        <li>
+                                            npm i chart.js react-chartjs-2 
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
                                     <b>React VFX</b>
                                     <ul>
                                         <li>
@@ -247,6 +255,14 @@ function Installation(props) {
                                     <ul>
                                         <li>
                                             npm i react-topbar-progress-indicator
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>GitHub Pages</b>
+                                    <ul>
+                                        <li>
+                                            npm i gh-pages
                                         </li>
                                     </ul>
                                 </li>
