@@ -192,7 +192,7 @@ export default function Navbar(props) {
         <Divider />
         <MenuList>
           <Tooltip title='Inicio' placement='right'>
-            <MenuItem component={ Link } to='/' >
+            <MenuItem component={ Link } to='/Home' >
               <ListItemIcon>
                 <HomeOutlinedIcon />
               </ListItemIcon>
