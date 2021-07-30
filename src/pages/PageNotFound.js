@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { IconButton, Grid, Tooltip, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { VFXProvider, VFXImg, VFXSpan } from 'react-vfx';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import dontWork from '../assets/img/dontWork.png';
 import '../assets/css/Error404.css';
+import '../assets/css/Pages.css';
+import '@fontsource/roboto';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -38,7 +41,7 @@ export default function PageNotFound(props) {
                     </Typography>
                     <Typography align='center'>
                         <Tooltip title='Inicio' aria-label='Inicio'>
-                            <IconButton component={ RouterDom.Link } to='/' color='primary'>
+                            <IconButton component={ Link } to='/' color='primary'>
                                 <HomeOutlinedIcon />
                             </IconButton>
                         </Tooltip>
